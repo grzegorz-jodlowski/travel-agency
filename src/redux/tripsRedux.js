@@ -12,11 +12,9 @@ export const getFilteredTrips = ({ trips, filters }) => {
   }
 
   // filter by duration
-
   output = output.filter(trip => trip.days >= filters.duration.from && trip.days <= filters.duration.to);
 
   // filter by tags
-
   if (filters.tags.length != 0) {
     output = output.filter(trip => {
       for (let tag of trip.tags) {
@@ -27,7 +25,9 @@ export const getFilteredTrips = ({ trips, filters }) => {
     });
   }
 
-  // TODO - sort by cost descending (most expensive goes first)
+
+  // sort by cost descending (most expensive goes first)
+  output = output.sort((a, b) => parseFloat(b.cost.slice(1).split(',').join('')) - parseFloat(a.cost.slice(1).split(',').join('')));
 
   return output;
 };

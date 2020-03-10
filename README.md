@@ -1,5 +1,5 @@
 <p align="center">
-<a href="https://glacial-reef-67756.herokuapp.com/"><img src="src/images/to-do-app.png" title="to-do-app" alt="layout "></a>
+<a href="#"><img src="src/assets/logo.png" title="travel-app" alt="snippet of homepage"></a>
 </p>
 
 

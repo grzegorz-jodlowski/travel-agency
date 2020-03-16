@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { calculateTotal } from '../../../utils/calculateTotal';
 import { formatPrice } from '../../../utils/formatPrice';
 
-
 import styles from './OrderSummary.scss';
 
 const OrderSummary = ({ tripCost, options }) => (

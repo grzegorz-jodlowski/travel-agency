@@ -22,8 +22,6 @@
 
 ## <a name="about"></a>What's this project about?
 
-T
-
 
 </br>
 
@@ -41,9 +39,6 @@ T
 </br>
 
 ## <a name="what"></a>What I learned?
-- u
-
-
 
 
 </br>
@@ -52,8 +47,6 @@ T
 - A:
 
 ```js
-
-
 
 ```
 

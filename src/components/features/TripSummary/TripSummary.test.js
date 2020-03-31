@@ -15,4 +15,12 @@ describe('Component TripSummary', () => {
     expect(component.find('img').prop('alt')).toBe('description');
     console.log(component.debug());
   });
+
+  it('should render correct name, cost and days props', () => {
+    const component = shallow(<TripSummary name='Marvelous travel' cost='$139' days={14} tags={[]} />);
+    expect(component.find('.title').text()).toBe('Marvelous travel');
+    expect(component.find('.days').text()).toBe('14 days');
+    expect(component.find('.cost').text()).toBe('from $139');
+    console.log(component.debug());
+  });
 });

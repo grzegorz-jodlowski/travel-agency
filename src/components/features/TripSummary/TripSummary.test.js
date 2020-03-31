@@ -19,8 +19,8 @@ describe('Component TripSummary', () => {
   it('should render correct name, cost and days props', () => {
     const component = shallow(<TripSummary id='abc' name='Marvelous travel' cost='$139' days={14} image='image.png' tags={[]} />);
     expect(component.find('.title').text()).toBe('Marvelous travel');
-    expect(component.find('.days').text()).toBe('14 days');
-    expect(component.find('.cost').text()).toBe('from $139');
+    expect(component.find('.details > span').at(0).text()).toBe('14 days');
+    expect(component.find('.details > span').at(1).text()).toBe('from $139');
     console.log(component.debug());
   });
 

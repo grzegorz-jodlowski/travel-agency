@@ -33,13 +33,29 @@ const optionTypes = {
   date: 'OrderOptionDate',
 };
 
+
 for (let type in optionTypes) {
   describe(`Component OrderOption with type=${type}`, () => {
     /* test setup */
 
+    let component;
+    let subcomponent;
+    let renderedSubcomponent;
+
+    beforeEach(() => {
+      component = shallow(
+        <OrderOption
+          type={type}
+        />
+      );
+      subcomponent = component.find(optionTypes[type]);
+      renderedSubcomponent = subcomponent.dive();
+    });
+
     /* common tests */
     it('passes dummy test', () => {
       expect(1).toBe(1);
+      console.log(component.debug());
     });
 
     /* type-specific tests */

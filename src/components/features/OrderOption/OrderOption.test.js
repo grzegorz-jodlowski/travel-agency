@@ -82,9 +82,9 @@ for (let type in optionTypes) {
     });
 
     /* common tests */
-    it('passes dummy test', () => {
-      expect(1).toBe(1);
-      console.log(component.debug());
+    it(`renders ${optionTypes[type]}`, () => {
+      expect(subcomponent).toBeTruthy();
+      expect(subcomponent.length).toBe(1);
       console.log(subcomponent.debug());
     });
 

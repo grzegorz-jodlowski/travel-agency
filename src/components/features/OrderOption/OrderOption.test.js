@@ -59,7 +59,7 @@ const mockPropsForType = {
 };
 
 const testValue = mockProps.values[1].id;
-const testValueNumber = 3;
+//const testValueNumber = 3;
 
 for (let type in optionTypes) {
   describe(`Component OrderOption with type=${type}`, () => {
@@ -112,6 +112,34 @@ for (let type in optionTypes) {
           expect(mockSetOrderOption).toBeCalledTimes(1);
           expect(mockSetOrderOption).toBeCalledWith({ [mockProps.id]: testValue });
         });
+        break;
+      }
+      case 'icons': {
+        it('contains divs with icon class', () => {
+          const iconClassDivs = renderedSubcomponent.find('div.icon');
+          expect(iconClassDivs.length).toBe(3);
+          expect(iconClassDivs.at(0).prop('value')).toBe('');
+          expect(iconClassDivs.at(1).find('Icon').prop('name')).toBe(mockProps.values[0].icon);
+          expect(iconClassDivs.at(2).find('Icon').prop('name')).toBe(mockProps.values[1].icon);
+        });
+
+        it('should run setOptionValue function on change', () => {
+          renderedSubcomponent.find('div.icon').at(2).simulate('click');
+          expect(mockSetOrderOption).toBeCalledTimes(1);
+          expect(mockSetOrderOption).toBeCalledWith({ [mockProps.id]: testValue });
+        });
+        break;
+      }
+      case 'checkboxes': {
+        break;
+      }
+      case 'number': {
+        break;
+      }
+      case 'text': {
+        break;
+      }
+      case 'date': {
         break;
       }
     }

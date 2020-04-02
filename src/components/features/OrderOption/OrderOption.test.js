@@ -68,11 +68,14 @@ for (let type in optionTypes) {
     let component;
     let subcomponent;
     let renderedSubcomponent;
+    let mockSetOrderOption;
 
     beforeEach(() => {
+      mockSetOrderOption = jest.fn();
       component = shallow(
         <OrderOption
           type={type}
+          setOrderOption={mockSetOrderOption}
           {...mockProps}
           {...mockPropsForType[type]}
         />
@@ -102,6 +105,12 @@ for (let type in optionTypes) {
           expect(options.at(0).prop('value')).toBe(mockProps.values[0].id);
           expect(options.at(1).prop('value')).toBe(mockProps.values[1].id);
           console.log(subcomponent.debug());
+        });
+
+        it('should run setOrderOption function on change', () => {
+          renderedSubcomponent.find('select').simulate('change', { currentTarget: { value: testValue } });
+          expect(mockSetOrderOption).toBeCalledTimes(1);
+          expect(mockSetOrderOption).toBeCalledWith({ [mockProps.id]: testValue });
         });
         break;
       }

@@ -139,6 +139,11 @@ for (let type in optionTypes) {
           console.log(renderedSubcomponent.debug());
         });
 
+        it('should run setOptionValue function on change', () => {
+          renderedSubcomponent.find(`input[type='checkbox']`).at(1).simulate('change', { currentTarget: { checked: true } });
+          expect(mockSetOrderOption).toBeCalledTimes(1);
+          expect(mockSetOrderOption).toBeCalledWith({ [mockProps.id]: [mockProps.currentValue, testValue] });
+        });
 
         break;
       }

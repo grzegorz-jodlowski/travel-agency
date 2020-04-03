@@ -136,7 +136,6 @@ for (let type in optionTypes) {
           expect(checkboxesInput.length).toBe(mockProps.values.length);
           expect(checkboxesInput.at(0).prop('value')).toBe(mockProps.values[0].id);
           expect(checkboxesInput.at(1).prop('value')).toBe(mockProps.values[1].id);
-          console.log(renderedSubcomponent.debug());
         });
 
         it('should run setOptionValue function on change', () => {
@@ -148,6 +147,12 @@ for (let type in optionTypes) {
         break;
       }
       case 'number': {
+        it('contains input', () => {
+          const input = renderedSubcomponent.find('input');
+          expect(input.length).toBe(1);
+          expect(input.prop('value')).toBe(mockPropsForType.number.currentValue);
+          console.log(renderedSubcomponent.debug());
+        });
         break;
       }
       case 'text': {

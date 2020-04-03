@@ -104,7 +104,6 @@ for (let type in optionTypes) {
           expect(options.length).toBe(mockProps.values.length);
           expect(options.at(0).prop('value')).toBe(mockProps.values[0].id);
           expect(options.at(1).prop('value')).toBe(mockProps.values[1].id);
-          console.log(subcomponent.debug());
         });
 
         it('should run setOrderOption function on change', () => {
@@ -117,7 +116,7 @@ for (let type in optionTypes) {
       case 'icons': {
         it('contains divs with icon class', () => {
           const iconClassDivs = renderedSubcomponent.find('div.icon');
-          expect(iconClassDivs.length).toBe(3);
+          expect(iconClassDivs.length).toBe(mockProps.values.length + 1);
           expect(iconClassDivs.at(0).prop('value')).toBe('');
           expect(iconClassDivs.at(1).find('Icon').prop('name')).toBe(mockProps.values[0].icon);
           expect(iconClassDivs.at(2).find('Icon').prop('name')).toBe(mockProps.values[1].icon);
@@ -131,6 +130,16 @@ for (let type in optionTypes) {
         break;
       }
       case 'checkboxes': {
+        it('contains inputs with checkbox type', () => {
+          const checkboxesInput = renderedSubcomponent.find(`input[type='checkbox']`);
+
+          expect(checkboxesInput.length).toBe(mockProps.values.length);
+          expect(checkboxesInput.at(0).prop('value')).toBe(mockProps.values[0].id);
+          expect(checkboxesInput.at(1).prop('value')).toBe(mockProps.values[1].id);
+          console.log(renderedSubcomponent.debug());
+        });
+
+
         break;
       }
       case 'number': {

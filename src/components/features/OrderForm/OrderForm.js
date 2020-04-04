@@ -10,13 +10,15 @@ import settings from '../../../data/settings';
 import { formatPrice } from '../../../utils/formatPrice';
 import { calculateTotal } from '../../../utils/calculateTotal';
 
-const sendOrder = (options, tripCost) => {
-  console.log(' : sendOrder -> options', options);
+const sendOrder = (options, tripCost, tripId, tripName, tripCountry) => {
   const totalCost = formatPrice(calculateTotal(tripCost, options));
 
   const payload = {
     ...options,
     totalCost,
+    tripId,
+    tripName,
+    tripCountry: tripCountry.alpha3Code,
   };
 
   const url = settings.db.url + '/' + settings.db.endpoint.orders;
@@ -38,7 +40,7 @@ const sendOrder = (options, tripCost) => {
     });
 };
 
-const OrderForm = ({ tripCost, options, setOrderOption }) => (
+const OrderForm = ({ tripCost, tripId, tripName, tripCountry, options, setOrderOption }) => (
   <Row>
     {pricing.map(option =>
       <Col md={4} key={option.id} >
@@ -47,13 +49,16 @@ const OrderForm = ({ tripCost, options, setOrderOption }) => (
     )}
     <Col xs={12}>
       <OrderSummary tripCost={tripCost} options={options} />
-      <Button onClick={() => sendOrder(options, tripCost)}>Order now!</Button>
+      <Button onClick={() => sendOrder(options, tripCost, tripId, tripName, tripCountry)}>Order now!</Button>
     </Col>
   </Row>
 );
 
 OrderForm.propTypes = {
   tripCost: PropTypes.string,
+  tripId: PropTypes.string,
+  tripName: PropTypes.string,
+  tripCountry: PropTypes.object,
   options: PropTypes.object,
   setOrderOption: PropTypes.func,
 };

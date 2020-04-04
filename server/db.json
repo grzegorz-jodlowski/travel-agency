@@ -43,6 +43,70 @@
       "start-date": "",
       "totalCost": "$142,899",
       "id": 3
+    },
+    {
+      "car-rental": "",
+      "accommodation": "hotel",
+      "features": [],
+      "adults": 1,
+      "children": 0,
+      "name": "",
+      "contact": "",
+      "start-date": "",
+      "totalCost": "$139,399",
+      "tripId": "5cc1d1014c75f672e46ef6d7",
+      "tripName": "Marvelous travel in fantastic Timor-Leste",
+      "tripCountry": {
+        "currencies": [
+          {
+            "code": "USD",
+            "name": "United States dollar",
+            "symbol": "$"
+          },
+          {}
+        ],
+        "languages": [
+          {
+            "iso639_1": "pt",
+            "iso639_2": "por",
+            "name": "Portuguese",
+            "nativeName": "Português"
+          }
+        ],
+        "flag": "https://restcountries.eu/data/tls.svg",
+        "name": "Timor-Leste",
+        "alpha2Code": "TL",
+        "alpha3Code": "TLS",
+        "capital": "Dili",
+        "region": "Asia",
+        "subregion": "South-Eastern Asia",
+        "population": 1167242,
+        "timezones": [
+          "UTC+09:00"
+        ],
+        "borders": [
+          "IDN"
+        ],
+        "trips": [
+          "5cc1d1014c75f672e46ef6d7"
+        ]
+      },
+      "id": 4
+    },
+    {
+      "car-rental": "",
+      "accommodation": "hotel",
+      "features": [],
+      "adults": 1,
+      "children": 0,
+      "name": "",
+      "contact": "",
+      "start-date": "",
+      "totalCost": "$139,399",
+      "tripId": "5cc1d1014c75f672e46ef6d7",
+      "tripName": "Marvelous travel in fantastic Timor-Leste",
+      "tripCountry": "TLS",
+      "id": 5
     }
   ]
 }

@@ -1,0 +1,48 @@
+{
+  "orders": [
+    {
+      "car-rental": "full",
+      "accommodation": "hotel",
+      "features": [
+        "all-inclusive"
+      ],
+      "adults": 1,
+      "children": 0,
+      "name": "",
+      "contact": "",
+      "start-date": "",
+      "totalCost": "$139,699",
+      "id": 1
+    },
+    {
+      "car-rental": "luxury",
+      "accommodation": "hotel",
+      "features": [
+        "security"
+      ],
+      "adults": 1,
+      "children": 0,
+      "name": "",
+      "contact": "",
+      "start-date": "",
+      "totalCost": "$141,699",
+      "id": 2
+    },
+    {
+      "car-rental": "luxury",
+      "accommodation": "hotel",
+      "features": [
+        "security",
+        "pool",
+        "all-inclusive"
+      ],
+      "adults": 1,
+      "children": 0,
+      "name": "",
+      "contact": "",
+      "start-date": "",
+      "totalCost": "$142,899",
+      "id": 3
+    }
+  ]
+}

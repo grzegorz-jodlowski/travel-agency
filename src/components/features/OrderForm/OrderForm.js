@@ -41,17 +41,19 @@ const sendOrder = (options, tripCost, tripId, tripName, tripCountry) => {
 };
 
 const OrderForm = ({ tripCost, tripId, tripName, tripCountry, options, setOrderOption }) => (
-  <Row>
-    {pricing.map(option =>
-      <Col md={4} key={option.id} >
-        <OrderOption currentValue={options[option.id]} setOrderOption={setOrderOption} {...option} />
+  <form>
+    <Row>
+      {pricing.map(option =>
+        <Col md={4} key={option.id} >
+          <OrderOption currentValue={options[option.id]} setOrderOption={setOrderOption} {...option} />
+        </Col>
+      )}
+      <Col xs={12}>
+        <OrderSummary tripCost={tripCost} options={options} />
+        <Button onClick={options.name && options.contact ? () => sendOrder(options, tripCost, tripId, tripName, tripCountry) : null}>Order now!</Button>
       </Col>
-    )}
-    <Col xs={12}>
-      <OrderSummary tripCost={tripCost} options={options} />
-      <Button onClick={() => sendOrder(options, tripCost, tripId, tripName, tripCountry)}>Order now!</Button>
-    </Col>
-  </Row>
+    </Row>
+  </form>
 );
 
 OrderForm.propTypes = {

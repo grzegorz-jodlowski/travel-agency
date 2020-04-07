@@ -3,6 +3,10 @@ import styles from './HappyHourAd.scss';
 import PropTypes from 'prop-types';
 
 class HappyHourAd extends React.Component {
+  constructor() {
+    super();
+    setInterval(() => this.forceUpdate(), 1000);
+  }
 
   getCountdownTime() {
     const currentTime = new Date();

@@ -28,7 +28,7 @@ class Header extends React.Component {
               </nav>
             </Col>
             <Col md={3} lg={2}>
-              <Contact />
+              <Contact nightDescription='The office opens at 8:00 UTC' morningContactPerson='Amanda' morningNumber='678.243.8455' afternoonContactPerson='Tobias' afternoonNumber='278.443.6443' eveningContactPerson='Helena' eveningNumber='167.280.3970' />
             </Col>
           </Row>
         </Grid>

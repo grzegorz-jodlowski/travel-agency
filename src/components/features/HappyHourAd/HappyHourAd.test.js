@@ -8,9 +8,14 @@ const select = {
 };
 
 const mockProps = {
-  title: 'Happy Hours',
+  title: 'Happy Hour',
   promoDescription: `It's your time! Take advantage of Happy Hour! All offers 20% off!`,
 };
+
+beforeAll(() => {
+  const utilsModule = jest.requireActual('../../../utils/formatTime.js');
+  utilsModule.formatTime = jest.fn(seconds => seconds);
+});
 
 describe('Component HappyHourAd', () => {
 
